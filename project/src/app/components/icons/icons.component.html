@@ -1,0 +1,29 @@
+<div class="icon-container" fxLayout="row" fxLayoutAlign="space-between start">
+    <div *ngIf="flag!= 'trash'" class="icons"><img src="../../../assets/notifications.svg" alt=""></div>
+    <div *ngIf="flag!= 'trash'" class="icons"><img src="../../../assets/collaborator.svg" alt=""></div>
+    <div *ngIf="flag!= 'trash'" class="icons"  mat-button [matMenuTriggerFor]="colorMenu" ><img src="../../../assets/palette.svg" alt=""></div>
+    <div *ngIf="flag!= 'trash'" class="icons"><img src="../../../assets/image.svg" alt=""></div>
+    <div fxLayot="row" fxLayoutAlign="star center">
+        <div *ngIf="flag == 'trash'" class="icons" (click)="delete_permanent()"><img src="../../../assets/delete_forever.svg" alt=""></div>
+        <div *ngIf="flag == 'trash'" class="icons" (click)="restore()"><img src="../../../assets/restore_from_trash.svg" alt=""></div>
+    </div>
+    <div *ngIf="flag!= 'trash' && flag!= 'archive'" class="icons" (click)="archive()"><img src="../../../assets/archive.svg" alt=""></div>
+    <div *ngIf="flag!= 'trash' && flag == 'archive'" class="icons" (click)="unarchive()"><img src="../../../assets/unarchive.svg" alt=""></div>
+    <div *ngIf="flag!= 'trash'" class="icons" mat-icon-button [matMenuTriggerFor]="menu"><img src="../../../assets/more.svg" alt="">
+    </div>
+    <mat-menu #menu="matMenu" >
+        <button (click)="trash()" mat-menu-item>Delete note</button>
+        <button mat-menu-item>Add label</button>
+        <button mat-menu-item>Add drawing</button>
+        <button mat-menu-item>Make a copy</button>
+        <button mat-menu-item>Show checkboxes</button>
+        <button mat-menu-item>Copy to Google Docs</button>
+    </mat-menu>
+    <mat-menu #colorMenu="matMenu">
+        <div class="pop">
+            <div *ngFor="let color of colors" class="backgroundColours">
+                <button mat-mini-fab [style.background]="color?.code" (click)="change_color(color?.code)"></button>
+            </div>
+        </div>
+    </mat-menu>
+</div>

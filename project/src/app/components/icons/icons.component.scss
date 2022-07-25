@@ -1,0 +1,36 @@
+.icons > img{
+    height: 18px;
+    margin-top: 5px;
+}
+.icons{
+    display: flex;
+    height: 36px;
+    width: 36px;
+    align-items: center;
+    justify-content: center;
+}
+.icons:hover{
+    background-color: rgba(224, 223, 221, 0.995);
+    border-radius: 20px;
+    cursor: pointer;
+}
+.mat-menu-item{
+    display: flex;
+    height: 30px;
+    align-items: center;
+}
+::ng-deep .color-menu{
+    width: 160px;
+}
+.pop {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: white;
+    max-width: 170px;
+    margin-left: 5px;
+  }
+  .backgroundColours {
+    margin-right: 1px;
+    // white-space: 2px;
+  }

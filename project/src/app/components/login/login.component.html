@@ -1,0 +1,44 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="head">
+    <div fxLayout="column" fxLayoutAlign="space-evenly center" class="head1">
+            <h3><span><span class="f">F</span><span class="u">u</span><span
+                class="n">n</span><span class="d">d</span><span class="o">o</span><span
+                class="o-g">o</span></span></h3>
+            <h1 >Sign in</h1>
+            <h2>Use your Google Account</h2>
+            
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="text">
+                    <mat-form-field appearance="outline" class="email-field" [style.width.px]=330 >
+                        <mat-label>Email or phone no</mat-label>
+                        <input matInput placeholder="Email or phone" formControlName="email">
+                        <mat-error>Enter Email or Phone No</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="email-field" [style.width.px]=330 >
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Password" formControlName="password">
+                        <mat-error>Enter Password</mat-error>
+                    </mat-form-field>
+                
+                    <div fxLayout="row" fxLayoutAlign="start none" class="example-label">
+                        <button routerLink="/forgotpassword" mat-button color="primary">Forgot password?</button>
+                    
+                    </div>
+                    <h4>Not your computer? Use Guest mode to sign in privately.</h4>
+                    <button mat-button color="primary" class="example-label">Learn more</button>
+    
+                    <div fxLayout="row" fxLayoutAlign="space-around none" class="example-label1">
+                        <button routerLink="/register" mat-button color="primary">Create account</button>
+                        <button mat-flat-button color="primary">Next</button>
+                    </div>
+                </div>
+            </form>
+            
+        
+    
+            
+
+        
+
+    </div>
+
+</div>

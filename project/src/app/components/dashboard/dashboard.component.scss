@@ -1,0 +1,103 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-is-mobile .example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+  }
+  
+  h1.example-app-name {
+    margin-left: 8px;
+  }
+  
+  .example-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+  }
+  
+  .example-is-mobile .example-sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
+  }
+.mat-toolbar{
+    background-color: #fff;
+    border: 1px solid rgb(249, 244, 244);
+}
+.keep{
+    margin-left: 5px;
+    height: 40px;
+}
+
+.main{
+    width: 100%;
+    padding-right: 0px;
+    margin: 0px;
+}
+
+.search-bar{
+    width: 45%;
+    background-color: rgb(194, 189, 189);
+    margin-left: 100px;
+    border-radius: 10px;
+    height: 50px;
+}
+
+.search {
+    height: 40px;
+    margin-right: 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 20px;
+}
+
+.search_outline{
+   height: -100px;
+   margin-top: 20%;
+   margin-bottom: 20%;
+}
+
+.icons > img{
+    height: 30px;
+    margin-top: 5px;
+    margin-right: 50px;
+}
+
+.icons1 > img{
+    display: flex;
+    height: 42px;
+    width: 42px;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+}
+
+.icons2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  margin-right: 10px;
+}
+.icons2 > img{
+  height: 22px;
+  margin-top: 5px;
+}
+
+.textarea {
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+}

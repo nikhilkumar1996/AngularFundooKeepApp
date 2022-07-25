@@ -1,0 +1,22 @@
+<div class="form-element" fxLayout="column" fxLayoutAlign="center center" >
+    <div class="form-class">
+        <div fxLayout="row">
+            <div class="input-form">
+                <input type="text" placeholder="Title" [(ngModel)]="title">
+            </div>
+            <div class="icons"><img src="../../../assets/push_pin.svg" alt=""></div>
+        </div>
+        <div class="desc-container" fxLayout="row">
+            <div class="input-form">
+                <input id="take-note" type="text" placeholder="Take a note..." [(ngModel)]="desc">
+            </div>
+        </div>
+        <div class="icon-button" fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="icon-container">
+                <app-icons></app-icons>
+            </div>
+            <button mat-button (click)="update()" >Close</button>
+
+        </div>
+    </div>
+</div>

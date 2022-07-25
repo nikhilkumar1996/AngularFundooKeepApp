@@ -1,0 +1,49 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar class="example-toolbar">
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <img class="keep" src="../../../assets/google_keep.svg">
+      <h1 class="example-app-name">Fundoo App</h1>
+      <div class="main" fxLayout="row" fxLayoutAlign="space-between center">
+        <div class="search-bar" fxLayout="row" fxLayoutAlign="start center">
+          <div class="search">
+            <img class="search" src="../../../assets/search.svg">
+            <p>
+              <input class="textarea" type="text" placeholder="Search..">
+            </p>
+          </div>
+          
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+
+          <div class="icons">
+            <img src="../../../assets/refresh.svg">
+            <img src="../../../assets/list_view.svg">
+            <img src="../../../assets/settings.svg">
+            <img class="grid" src="../../../assets/grid.svg">
+            <img src="../../../assets/person_account.svg">
+          </div>
+          
+        </div>
+      </div>
+      
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="example-sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+        <mat-nav-list fxLayout="column" fxLayoutAlign="start start">
+          <a mat-list-item routerLink="/dashboard/notes"><div class="icons2" id="side-icons"><img src="../../../assets/lightbulb.svg" alt=""></div>Notes</a>
+          <a mat-list-item routerLink="/dashboard/trash"><div class="icons2" id="side-icons"><img src="../../../assets/notifications.svg" alt=""></div>Reminders</a>
+          <a mat-list-item routerLink="/dashboard/archive"><div class="icons2" id="side-icons"><img src="../../../assets/archive.svg" alt=""></div>Archive</a>
+          <a mat-list-item routerLink="/dashboard/label"><div class="icons2" id="side-icons"><img src="../../../assets/edit_.svg" alt=""></div>Label</a>
+          <a mat-list-item routerLink="/dashboard/trash"><div class="icons2" id="side-icons"><img src="../../../assets/delete_.svg" alt=""></div>Trash</a>
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+  

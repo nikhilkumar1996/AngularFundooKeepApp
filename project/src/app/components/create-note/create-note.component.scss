@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+.add-form{
+    background-color: #fff;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(27, 26, 26, 0.667);
+    width: 580px;
+    margin-top: 25px;
+}
+.input-form{
+    width: 100%;
+}
+.input-form > input{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    background: transparent;
+    font-size: medium;
+    width: 97%;
+    height: 40px;
+    border: none;
+    outline: none;
+}
+.form-element{
+    width: 100%;
+    margin: 5px;
+    margin-left: 32px;
+}
+.icon-button{
+    width: 95%;
+}
+.icon-button > button{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    width: 80px;
+    height: 35px;
+}
+.icon-container{
+    margin-top: 3px;
+    width: 70%;
+    height: 30px;
+    margin-bottom: 5px;
+}
+.icons{
+    display: flex;
+    height: 42px;
+    width: 42px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+.icons:hover{
+    background-color: rgba(224, 223, 221, 0.995);
+    border-radius: 20px;
+    cursor: pointer;
+}
+.icons > img{
+    height: 22px;
+    margin-top: 5px;
+}
+.ggg-xs{
+}
+.add-form-sm{
+}
+.add-form-xs{
+    width: 95%;
+}

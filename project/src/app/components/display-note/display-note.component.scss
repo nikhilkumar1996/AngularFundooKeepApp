@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+.notes-container{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 240px;
+}
+.note{
+    border: 1px solid rgba(200, 196, 196, 0.389);
+    width: 100%;
+    border-radius: 8px;
+}
+.note-things{
+    margin: 2px;
+}
+.note-data{
+    margin-left: 5px;
+}
+#pin-image{
+    height: 22px;
+}
+.image-container{
+    display: none;
+}
+.note:hover{
+    box-shadow: 2px 2px 2px rgba(167, 163, 163, 0.667);
+    box-shadow: 2px 2px 2px rgba(167, 163, 163, 0.667);
+}
+.note:hover .image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 31px;
+    width: 31px;
+    border-radius: 20px;
+}
+.image-container:hover{
+    background-color: rgba(224, 223, 221, 0.995);
+    cursor: pointer;
+}
+.title-container{
+    font-family: 'Arial', sans-serif;
+}
+.icons{
+    visibility: hidden;
+}
+.note:hover .icons{
+    visibility: visible;
+}
+.notes-back{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    margin-left: 120px;
+    width: 90%;
+    height:auto;
+}
+.notes-list{
+    display: flex;
+    flex-direction:column;
+    // flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+    width: 90%;
+    height:auto;
+}
+.notes-list-container{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 600px;
+}
+
+.icons > img{
+    height: 22px;
+    margin-top: 5px;
+}
+.icons{
+    display: flex;
+    height: 42px;
+    width: 42px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 90px;
+}
+.icons:hover{
+    background-color: rgba(224, 223, 221, 0.995);
+    border-radius: 20px;
+    cursor: pointer;
+}
