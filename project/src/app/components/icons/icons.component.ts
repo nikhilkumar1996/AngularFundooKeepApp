@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,Output,EventEmitter } from '@angular/core';
 import { NoteService } from 'src/app/services/noteservice/note.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -25,6 +25,8 @@ export class IconsComponent implements OnInit {
     { code: '#D3D3D3', name: 'grey'}
   ]
   @Input() childmessage:any
+  @Output() messageEvent = new EventEmitter<any>(); 
+  message:any;
 
   constructor(private note:NoteService, private route:ActivatedRoute) { }
 
@@ -42,6 +44,7 @@ export class IconsComponent implements OnInit {
     console.log(data)
     this.note.archive_note(data).subscribe((res:any)=>{
       console.log(res)
+      this.messageEvent.emit(this.message='Note Archived')
     })
     
   }
@@ -54,6 +57,7 @@ export class IconsComponent implements OnInit {
     console.log(data)
     this.note.delete_note(data).subscribe((res:any)=>{
       console.log(res);
+      this.messageEvent.emit(this.message='Note Trashed')
     })
   }
   change_color(note_color:any){
@@ -65,6 +69,7 @@ export class IconsComponent implements OnInit {
     console.log(data)
     this.note.change_note_color(data).subscribe((res)=>{
       console.log(res);
+      this.messageEvent.emit(note_color)
     })
   }
   unarchive(){
@@ -75,6 +80,7 @@ export class IconsComponent implements OnInit {
     }
     this.note.archive_note(data).subscribe((res)=>{
       console.log(res);
+      this.messageEvent.emit(this.message='Note Unarchived')
     })
   }
   delete_permanent(){
@@ -85,6 +91,7 @@ export class IconsComponent implements OnInit {
     }
     this.note.permanent_delete(data).subscribe((res)=>{
       console.log(res);
+      this.messageEvent.emit(this.message='Note Deleted')
     })
   }
   restore(){
@@ -95,6 +102,7 @@ export class IconsComponent implements OnInit {
     }
     this.note.delete_note(data).subscribe((res)=>{
       console.log(res);
+      this.messageEvent.emit(this.message='Note Restored')
     })
   }
 }

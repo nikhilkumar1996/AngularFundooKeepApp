@@ -20,6 +20,10 @@ export class TrashComponent implements OnInit {
       console.log(res)
       this.result=res.data.data
     })
-  }  
+  }
+  recieveMessage(event:any){
+    console.log(event);
+    this.display_trash();  
+  } 
 
 }

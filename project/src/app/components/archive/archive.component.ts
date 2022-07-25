@@ -22,5 +22,9 @@ export class ArchiveComponent implements OnInit {
       console.log(this.result)
     })
   }
+  recieveMessage(event:any){
+    console.log(event)
+    this.display_archive()
+  }
 
 }
