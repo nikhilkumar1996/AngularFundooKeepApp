@@ -4,8 +4,8 @@
     <div *ngIf="flag!= 'trash'" class="icons"  mat-button [matMenuTriggerFor]="colorMenu" ><img src="../../../assets/palette.svg" alt=""></div>
     <div *ngIf="flag!= 'trash'" class="icons"><img src="../../../assets/image.svg" alt=""></div>
     <div fxLayot="row" fxLayoutAlign="star center">
-        <div *ngIf="flag == 'trash'" class="icons" (click)="delete_permanent()"><img src="../../../assets/delete_forever.svg" alt=""></div>
-        <div *ngIf="flag == 'trash'" class="icons" (click)="restore()"><img src="../../../assets/restore_from_trash.svg" alt=""></div>
+        <div *ngIf="flag == 'trash'" class="trash1" (click)="delete_permanent()"><img src="../../../assets/delete_forever.svg" alt=""></div>
+        <div *ngIf="flag == 'trash'" class="trash1" (click)="restore()"><img src="../../../assets/restore_from_trash.svg" alt=""></div>
     </div>
     <div *ngIf="flag!= 'trash' && flag!= 'archive'" class="icons" (click)="archive()"><img src="../../../assets/archive.svg" alt=""></div>
     <div *ngIf="flag!= 'trash' && flag == 'archive'" class="icons" (click)="unarchive()"><img src="../../../assets/unarchive.svg" alt=""></div>

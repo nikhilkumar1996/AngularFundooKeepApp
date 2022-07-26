@@ -31,6 +31,8 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ArchiveComponent } from './components/archive/archive.component';
+import { AuthService } from './services/authservice/auth.service';
+import { FilterpipePipe } from './filterpipe/filterpipe.pipe';
 
 
 @NgModule({
@@ -48,6 +50,7 @@ import { ArchiveComponent } from './components/archive/archive.component';
     DisplayNoteComponent,
     UpdateNoteComponent,
     ArchiveComponent,
+    FilterpipePipe,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +74,7 @@ import { ArchiveComponent } from './components/archive/archive.component';
 
 
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -39,7 +39,7 @@ export class IconsComponent implements OnInit {
     console.log('Icons ArchiveNote Api Calling..')
     let data={
       noteIdList:[this.childmessage],
-      isArchived: true,
+      isArchived: true
     }
     console.log(data)
     this.note.archive_note(data).subscribe((res:any)=>{

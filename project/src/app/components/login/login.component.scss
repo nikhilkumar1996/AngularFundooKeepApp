@@ -1,14 +1,22 @@
 .head1{
-   border: 1px solid rgb(196, 189, 189);
-   border-radius: 6px;
-   width: 35%;
-   height:-50%;
-   margin-top: 40%;
+//    border: 1px solid rgb(196, 189, 189);
+//    border-radius: 6px;
+//    width: 35%;
+//    height:-50%;
+//    margin-top: 40%;
+    width: 430px;
+    border: 1px solid rgb(196, 189, 189);
+    border-radius: 6px;
+    height: 98%;
+    justify-content:space-around;
+    // margin-bottom: -10%;
 }
 .head{
-    height:40%;
-    // margin-bottom: -50%;
+    height:90%;
     
+}
+.mat-form-field{
+    width: 355px;
 }
 .text{
     
@@ -56,7 +64,12 @@ h1{
 .o{font-size: larger;color:#DB4437; }
 .o-g{font-size: larger;color:#0F9D58; }
 
-.h4{
-    height: 20px;
-    padding: 40%;
+// h4{
+//     height: 20px;
+//     padding: 40%;
+// }
+
+h3{
+    // height: -50px;
+    margin-top: 18%;
 }

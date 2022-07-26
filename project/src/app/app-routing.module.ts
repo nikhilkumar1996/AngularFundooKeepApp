@@ -9,13 +9,16 @@ import { CreateNoteComponent } from './components/create-note/create-note.compon
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
 import { TrashComponent } from './components/trash/trash.component';
 import { ArchiveComponent } from './components/archive/archive.component';
+import { AuthGuardGuard } from './auth-guard/auth-guard.guard';
+
 const routes: Routes = [
+  {path: '', redirectTo: "/login", pathMatch: 'full' },
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'resetpassword', component: ResetPasswordComponent},
   {path: 'forgotpassword',component:ForgotPasswordComponent},
   {path: 'createnote',component:CreateNoteComponent},
-  {path: 'dashboard',component:DashboardComponent,
+  {path: 'dashboard',component:DashboardComponent,  canActivate:[AuthGuardGuard],
     children:[
       {path: 'notes', component:GetAllNotesComponent},
       {path: 'archive', component:ArchiveComponent},

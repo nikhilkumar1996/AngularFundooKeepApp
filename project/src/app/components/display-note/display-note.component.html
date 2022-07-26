@@ -1,5 +1,5 @@
 <div class="notes-back" id="notes-main" fxLayoutAlign="center center">
-    <div class="notes-container"fxLayout="row" fxLayoutAlign="start start" *ngFor="let note of childMessage">
+    <div class="notes-container"fxLayout="row" fxLayoutAlign="start start" *ngFor="let note of childMessage | filterpipe: message">
         <div class="note" [style.background]="note.color">
             <div class="note-things">
                 <div class="note-data">

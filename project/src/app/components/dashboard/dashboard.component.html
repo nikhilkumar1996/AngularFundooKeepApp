@@ -8,7 +8,7 @@
           <div class="search">
             <img class="search" src="../../../assets/search.svg">
             <p>
-              <input class="textarea" type="text" placeholder="Search..">
+              <input class="textarea" type="text" placeholder="Search.." (keyup)="onekeyup($event)">
             </p>
           </div>
           
@@ -35,8 +35,8 @@
         <mat-nav-list fxLayout="column" fxLayoutAlign="start start">
           <a mat-list-item routerLink="/dashboard/notes"><div class="icons2" id="side-icons"><img src="../../../assets/lightbulb.svg" alt=""></div>Notes</a>
           <a mat-list-item routerLink="/dashboard/trash"><div class="icons2" id="side-icons"><img src="../../../assets/notifications.svg" alt=""></div>Reminders</a>
-          <a mat-list-item routerLink="/dashboard/archive"><div class="icons2" id="side-icons"><img src="../../../assets/archive.svg" alt=""></div>Archive</a>
           <a mat-list-item routerLink="/dashboard/label"><div class="icons2" id="side-icons"><img src="../../../assets/edit_.svg" alt=""></div>Label</a>
+          <a mat-list-item routerLink="/dashboard/archive"><div class="icons2" id="side-icons"><img src="../../../assets/archive.svg" alt=""></div>Archive</a>
           <a mat-list-item routerLink="/dashboard/trash"><div class="icons2" id="side-icons"><img src="../../../assets/delete_.svg" alt=""></div>Trash</a>
         </mat-nav-list>
       </mat-sidenav>
