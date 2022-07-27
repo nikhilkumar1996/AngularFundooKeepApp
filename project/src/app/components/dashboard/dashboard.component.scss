@@ -67,10 +67,27 @@
    margin-bottom: 20%;
 }
 
+.icons{
+  display: flex;
+  height: 42px;
+  width: 42px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+
+}
+.icons:hover{
+  background-color: rgba(224, 223, 221, 0.995);
+  border-radius: 20px;
+  cursor: pointer;
+}
 .icons > img{
-    height: 30px;
-    margin-top: 5px;
-    margin-right: 50px;
+  height: 30px;
+  margin-top: 5px;
+}
+
+.icon1{
+  margin-right: 20px;
 }
 
 .icons1 > img{

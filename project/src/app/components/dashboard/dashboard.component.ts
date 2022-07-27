@@ -24,6 +24,9 @@ export class DashboardComponent implements OnDestroy {
   );
 
   private _mobileQueryListener: () => void;
+  
+  gridView:any
+  message:any
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private data:DataService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
@@ -32,7 +35,8 @@ export class DashboardComponent implements OnDestroy {
   }
 
   ngOnInit(): void {
-    
+    this.data.currentMessage.subscribe(message => this.message = message)
+    this.data.currentView.subscribe(flag => this.gridView = flag)
   }
 
   ngOnDestroy(): void {
@@ -43,4 +47,12 @@ export class DashboardComponent implements OnDestroy {
     this.data.changeMessage(text.target.value);
   }
 
+  grid(){
+    this.gridView=true;
+    this.data.changeView(this.gridView)
+  }
+  list(){
+    this.gridView=false;
+    this.data.changeView(this.gridView)
+  }
 }

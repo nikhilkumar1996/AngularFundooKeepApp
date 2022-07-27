@@ -24,7 +24,7 @@ export class GetAllNotesComponent implements OnInit {
       console.log(res.data.data)
       this.noteArray = res.data.data
       this.notesValue = this.noteArray.filter((obj:any)=>{
-        return obj.isDeleted==false && obj.isArchived==false
+        return obj.isDeleted===false && obj.isArchived===false
       })
       
     })

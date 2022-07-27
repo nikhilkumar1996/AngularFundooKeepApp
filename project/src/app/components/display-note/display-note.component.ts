@@ -11,6 +11,7 @@ import { UpdateNoteComponent } from '../update-note/update-note.component';
 export class DisplayNoteComponent implements OnInit {
   message:any;
   noteId:any;
+  isGrid:any = true;
   @Input() childMessage: any;
   @Output() messageEvent = new EventEmitter<any>();
 
@@ -22,7 +23,13 @@ export class DisplayNoteComponent implements OnInit {
       this.message = message
       console.log(this.message)
     })
+
+    this.data.currentView.subscribe((flag)=>{
+      this.isGrid=flag
+      console.log(this.isGrid)
+    })
   }
+  
 
   // onclick(id:any){
   //   this.noteId=id;

@@ -14,14 +14,15 @@
           
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between center">
-
-          <div class="icons">
-            <img src="../../../assets/refresh.svg">
-            <img src="../../../assets/list_view.svg">
-            <img src="../../../assets/settings.svg">
-            <img class="grid" src="../../../assets/grid.svg">
-            <img src="../../../assets/person_account.svg">
+          <div class="icon1" fxLayout="row" ngClass.xs="icon1-xs">
+              <div class="icons"><img src="../../../assets/refresh.svg"></div>
+              <div (click)="list()" *ngIf="gridView" class="icons"><img src="../../../assets/list_view.svg"></div>
+              <div class="icons" ><img src="../../../assets/settings.svg"></div>
+              <div (click)="grid()" *ngIf="!gridView"  class="icons" ><img src="../../../assets/grid.svg"></div>
+              <div class ="icons" ><img src="../../../assets/person_account.svg"></div>
           </div>
+
+          
           
         </div>
       </div>

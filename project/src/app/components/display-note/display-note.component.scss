@@ -56,18 +56,23 @@
 }
 .notes-list{
     display: flex;
-    flex-direction:column;
-    // flex-wrap: wrap;
+    // flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 40px;
-    width: 90%;
-    height:auto;
+    margin-left: 40%;
+    width: 20%;
+    height:700%;
+    // border: 2px solid green;
+    margin-top:5%;
+    margin-bottom:5%;
+    
 }
 .notes-list-container{
-    margin-left: 20px;
+    // margin-left: 20px;
     margin-top: 20px;
-    width: 600px;
+    height: 900%;
+    width: 90%;
+    // border: 2px solid red;
 }
 
 .icons > img{
@@ -87,3 +92,7 @@
     border-radius: 20px;
     cursor: pointer;
 }
+
+// .border-style{
+//     border: 2px solid black;
+// }

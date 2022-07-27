@@ -1,6 +1,29 @@
-<div class="notes-back" id="notes-main" fxLayoutAlign="center center">
+<div class="notes-back" id="notes-main" *ngIf="isGrid" fxLayoutAlign="center center">
     <div class="notes-container"fxLayout="row" fxLayoutAlign="start start" *ngFor="let note of childMessage | filterpipe: message">
         <div class="note" [style.background]="note.color">
+            <div class="note-things">
+                <div class="note-data">
+                    <div class="title-container" fxLayout="row" fxLayoutAlign="space-between start">
+                        <h2 (click)="openDialog(note)"> {{note.title}}</h2>
+                        <div class="image-container">
+                            <img id="pin-image" src="../../../assets/push_pin.svg">
+                        </div>
+                    </div>
+                    <h4 (click)="openDialog(note)">{{note.description}}</h4>
+                    
+                </div> 
+                <div class="icons" >
+                    <app-icons [childmessage]= "note.id" (messageEvent)="receiveMessage($event)"></app-icons>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div fxLayout="column" class="notes-list" *ngIf="!isGrid" fxLayoutAlign="space-around center">
+    <div  fxLayout="column" class="notes-list-container" fxLayoutAlign="start start" *ngFor="let note of childMessage | filterpipe: message">
+         <div class="note" [style.background]="note.color">
             <div class="note-things">
                 <div class="note-data">
                     <div class="title-container" fxLayout="row" fxLayoutAlign="space-between start">
