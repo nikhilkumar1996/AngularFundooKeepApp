@@ -1,6 +1,7 @@
 import { Component, OnInit, Input,Output,EventEmitter } from '@angular/core';
 import { NoteService } from 'src/app/services/noteservice/note.service';
 import { ActivatedRoute } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-icons',
@@ -28,7 +29,7 @@ export class IconsComponent implements OnInit {
   @Output() messageEvent = new EventEmitter<any>(); 
   message:any;
 
-  constructor(private note:NoteService, private route:ActivatedRoute) { }
+  constructor(private note:NoteService, private route:ActivatedRoute,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.flag=this.route.snapshot.url[0].path;
@@ -45,6 +46,7 @@ export class IconsComponent implements OnInit {
     this.note.archive_note(data).subscribe((res:any)=>{
       console.log(res)
       this.messageEvent.emit(this.message='Note Archived')
+      this.snackBar.open('Note Archived')
     })
     
   }
@@ -58,6 +60,7 @@ export class IconsComponent implements OnInit {
     this.note.delete_note(data).subscribe((res:any)=>{
       console.log(res);
       this.messageEvent.emit(this.message='Note Trashed')
+      this.snackBar.open('Note trashed')
     })
   }
   change_color(note_color:any){
@@ -70,6 +73,7 @@ export class IconsComponent implements OnInit {
     this.note.change_note_color(data).subscribe((res)=>{
       console.log(res);
       this.messageEvent.emit(note_color)
+      this.snackBar.open('Note color changed')
     })
   }
   unarchive(){
@@ -81,6 +85,7 @@ export class IconsComponent implements OnInit {
     this.note.archive_note(data).subscribe((res)=>{
       console.log(res);
       this.messageEvent.emit(this.message='Note Unarchived')
+      this.snackBar.open('Note Unarchived')
     })
   }
   delete_permanent(){
@@ -92,6 +97,7 @@ export class IconsComponent implements OnInit {
     this.note.permanent_delete(data).subscribe((res)=>{
       console.log(res);
       this.messageEvent.emit(this.message='Note Deleted')
+      this.snackBar.open('Note deleted permanently')
     })
   }
   restore(){
@@ -103,6 +109,7 @@ export class IconsComponent implements OnInit {
     this.note.delete_note(data).subscribe((res)=>{
       console.log(res);
       this.messageEvent.emit(this.message='Note Restored')
+      this.snackBar.open('Note restored')
     })
   }
 }

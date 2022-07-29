@@ -33,6 +33,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { AuthService } from './services/authservice/auth.service';
 import { FilterpipePipe } from './filterpipe/filterpipe.pipe';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { FilterpipePipe } from './filterpipe/filterpipe.pipe';
     MatMenuModule,
     FormsModule,
     MatDialogModule,
+    MatSnackBarModule
 
 
   ],

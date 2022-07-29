@@ -31,7 +31,7 @@
   }
 .mat-toolbar{
     background-color: #fff;
-    border: 1px solid rgb(249, 244, 244);
+    // border: 1px solid rgb(249, 244, 244);
 }
 .keep{
     margin-left: 5px;
@@ -46,7 +46,7 @@
 
 .search-bar{
     width: 45%;
-    background-color: rgb(194, 189, 189);
+    background-color: rgba(237, 244, 245, 0.897);
     margin-left: 100px;
     border-radius: 10px;
     height: 50px;
@@ -117,4 +117,8 @@
   background-color: transparent;
   resize: none;
   outline: none;
+}
+
+mat-form-field {
+  margin-right: 12px;
 }

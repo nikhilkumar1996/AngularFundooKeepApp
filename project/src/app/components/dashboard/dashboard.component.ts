@@ -1,5 +1,7 @@
 import {MediaMatcher, BreakpointObserver,Breakpoints} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/dataservice/data.service';
 
 @Component({
@@ -28,7 +30,7 @@ export class DashboardComponent implements OnDestroy {
   gridView:any
   message:any
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private data:DataService,private responsive: BreakpointObserver) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private data:DataService,private responsive: BreakpointObserver,private snackBar:MatSnackBar,private route:Router) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -81,5 +83,10 @@ export class DashboardComponent implements OnDestroy {
   list(){
     this.gridView=false;
     this.data.changeView(this.gridView)
+  }
+  logout(){
+    localStorage.removeItem('token');
+    this.snackBar.open('User Logged Out', 'Return', {'duration': 2000})
+    this.route.navigateByUrl('/login');
   }
 }

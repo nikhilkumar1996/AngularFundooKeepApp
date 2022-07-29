@@ -11,7 +11,7 @@ export class FilterpipePipe implements PipeTransform {
     }
     const notes = [ ];
     for(const note of value){
-      if(note['title'] == filterString){
+      if(note['title'] == filterString || note['description'] == filterString){
         notes.push(note)
       }
     }
