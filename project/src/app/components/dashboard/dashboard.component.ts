@@ -1,4 +1,4 @@
-import {MediaMatcher} from '@angular/cdk/layout';
+import {MediaMatcher, BreakpointObserver,Breakpoints} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
 import { DataService } from 'src/app/services/dataservice/data.service';
 
@@ -28,7 +28,7 @@ export class DashboardComponent implements OnDestroy {
   gridView:any
   message:any
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private data:DataService) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private data:DataService,private responsive: BreakpointObserver) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -37,6 +37,33 @@ export class DashboardComponent implements OnDestroy {
   ngOnInit(): void {
     this.data.currentMessage.subscribe(message => this.message = message)
     this.data.currentView.subscribe(flag => this.gridView = flag)
+
+    this.responsive.observe([
+      Breakpoints.TabletPortrait,
+      Breakpoints.HandsetLandscape,
+      Breakpoints.HandsetPortrait,
+      Breakpoints.TabletLandscape])
+      .subscribe(result => {
+    
+        const breakpoints = result.breakpoints;
+    
+        if (breakpoints[Breakpoints.TabletPortrait]) {
+          console.log("screens matches TabletPortrait");
+        }
+        else if (breakpoints[Breakpoints.HandsetLandscape]) {
+          console.log("screens matches HandsetLandscape");
+        }
+        else if (breakpoints[Breakpoints.HandsetPortrait]) {
+          console.log("screens matches HandsetLandscape");
+        }
+        else if (breakpoints[Breakpoints.TabletLandscape]) {
+          console.log("screens matches HandsetLandscape");
+        }
+    
+    
+    
+      });
+    
   }
 
   ngOnDestroy(): void {

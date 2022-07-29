@@ -61,7 +61,7 @@
     align-items: center;
     margin-left: 40%;
     width: 20%;
-    height:700%;
+    height:500%;
     // border: 2px solid green;
     margin-top:5%;
     margin-bottom:5%;
@@ -70,9 +70,11 @@
 .notes-list-container{
     // margin-left: 20px;
     margin-top: 20px;
-    height: 900%;
+    height: auto;
     width: 90%;
     // border: 2px solid red;
+    padding:2%;
+    margin: 2%;
 }
 
 .icons > img{
