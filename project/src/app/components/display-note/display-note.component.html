@@ -21,8 +21,8 @@
     </div>
 </div>
 
-<div class="back">
-    <div fxLayout="column" class="notes-list" *ngIf="!isGrid" fxLayoutAlign="space-around center">
+<div class="back" *ngIf="!isGrid">
+    <div fxLayout="column" class="notes-list" fxLayoutAlign="space-around center">
         <div  fxLayout="column" class="notes-list-container" fxLayoutAlign="start start" *ngFor="let note of childMessage | filterpipe: message">
              <div class="note" [style.background]="note.color">
                 <div class="note-things">

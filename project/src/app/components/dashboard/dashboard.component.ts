@@ -27,7 +27,7 @@ export class DashboardComponent implements OnDestroy {
 
   private _mobileQueryListener: () => void;
   
-  gridView:any
+  gridView:any=true;
   message:any
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private data:DataService,private responsive: BreakpointObserver,private snackBar:MatSnackBar,private route:Router) {
