@@ -22,8 +22,9 @@ const routes: Routes = [
     children:[
       {path: 'notes', component:GetAllNotesComponent},
       {path: 'archive', component:ArchiveComponent},
-      {path: 'trash', component:TrashComponent}
+      {path: 'trash', component:TrashComponent},
   ]},
+
 ];
 
 @NgModule({
